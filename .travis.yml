@@ -12,11 +12,11 @@ script:
   - docker --version
   - tag=$(git rev-parse --short $TRAVIS_COMMIT)
   - docker build -t udagram-api-feed udagram-api-feed/
-  - docker tag udagram-api-feed ioannisioannou16/udagram-api-feed:tag
+  - docker tag udagram-api-feed ioannisioannou16/udagram-api-feed:$tag
   - docker build -t udagram-api-user udagram-api-user/
-  - docker tag udagram-api-user ioannisioannou16/udagram-api-user:tag
+  - docker tag udagram-api-user ioannisioannou16/udagram-api-user:$tag
   - docker build -t udagram-api-nginx udagram-api-nginx/
-  - docker tag udagram-api-nginx ioannisioannou16/udagram-api-nginx:tag
+  - docker tag udagram-api-nginx ioannisioannou16/udagram-api-nginx:$tag
 after_success:
   - docker push ioannisioannou16/udagram-api-feed
   - docker push ioannisioannou16/udagram-api-user
