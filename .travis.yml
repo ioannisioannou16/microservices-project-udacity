@@ -17,7 +17,10 @@ script:
   - docker tag udagram-api-user ioannisioannou16/udagram-api-user:$tag
   - docker build -t udagram-api-nginx udagram-api-nginx/
   - docker tag udagram-api-nginx ioannisioannou16/udagram-api-nginx:$tag
+  - docker build -t udagram-frontend udagram-frontend/
+  - docker tag udagram-frontend ioannisioannou16/udagram-frontend:$tag
 after_success:
   - docker push ioannisioannou16/udagram-api-feed
   - docker push ioannisioannou16/udagram-api-user
   - docker push ioannisioannou16/udagram-api-nginx
+  - docker push ioannisioannou16/udagram-frontend
