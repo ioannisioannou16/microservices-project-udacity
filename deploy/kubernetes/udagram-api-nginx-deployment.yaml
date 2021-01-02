@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udagram-api-nginx
+  labels:
+    app: udagram-api-nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: udagram-api-nginx
+  template:
+    metadata:
+      labels:
+        app: udagram-api-nginx
+    spec:
+      containers:
+        - name: udagram-api-nginx
+          image: ioannisioannou16/udagram-api-nginx:383c6fe
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "125m"
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
