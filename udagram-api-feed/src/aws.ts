@@ -6,9 +6,6 @@ if (config.aws_profile) {
   AWS.config.credentials = new AWS.SharedIniFileCredentials({profile: config.aws_profile});
 }
 
-console.log("profile", config.aws_profile);
-console.log(AWS.config);
-
 export const s3 = new AWS.S3({
   signatureVersion: 'v4',
   region: config.aws_region,
@@ -17,6 +14,8 @@ export const s3 = new AWS.S3({
 
 // Generates an AWS signed URL for retrieving objects
 export function getGetSignedUrl( key: string ): string {
+  console.log("profile", config.aws_profile);
+  console.log(AWS.config);
   const signedUrlExpireSeconds = 60 * 5;
 
   return s3.getSignedUrl('getObject', {
