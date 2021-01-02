@@ -1,11 +1,13 @@
 import AWS = require('aws-sdk');
 import {config} from './config/config';
 
-
 // Configure AWS
 if (config.aws_profile) {
-  AWS.config.credentials = new AWS.SharedIniFileCredentials({profile: config.aws_profile});;
+  AWS.config.credentials = new AWS.SharedIniFileCredentials({profile: config.aws_profile});
 }
+
+console.log("profile", config.aws_profile);
+console.log(AWS.config);
 
 export const s3 = new AWS.S3({
   signatureVersion: 'v4',
