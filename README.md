@@ -13,11 +13,11 @@ You can run the whole application using Docker Compose. The Docker Compose files
 
 To run it you need to: 
 1) Set the environmental variables `POSTGRES_USERNAME`, `POSTGRES_PASSWORD`, `POSTGRES_DB`, `POSTGRES_HOST`, 
-   `AWS_REGION`, `AWS_PROFILE`, `AWS_BUCKET` and `JWT_SECRET`.
+   `AWS_REGION`, `AWS_PROFILE`, `AWS_BUCKET` and `JWT_SECRET`
 2) Go to `deploy/local`
 3) `docker-compose -f docker-compose-build.yaml build --parallel`
 4) `docker-compose up`
-5) Open http://localhost:8100 in your browser.
+5) Open http://localhost:8100 in your browser
 
 ## Run apps individually locally
 If you need to make any changes, you may want to run the apps individually locally.
