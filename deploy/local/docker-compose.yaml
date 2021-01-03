@@ -13,7 +13,7 @@ services:
       AWS_PROFILE: $AWS_PROFILE
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
-      URL: $URL
+      URL: http://localhost:8100
   udagram-api-user:
     image: udagram-api-user
     environment:
@@ -22,7 +22,7 @@ services:
       POSTGRES_DB: $POSTGRES_DB
       POSTGRES_HOST: $POSTGRES_HOST
       JWT_SECRET: $JWT_SECRET
-      URL: $URL
+      URL: http://localhost:8100
   udagram-api-nginx:
     image: udagram-api-nginx
     ports:

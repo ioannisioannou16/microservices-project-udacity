@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: udagram-api-user
-          image: ioannisioannou16/udagram-api-user:3addc24
+          image: ioannisioannou16/udagram-api-user:ae06596
           imagePullPolicy: Always
           ports:
             - containerPort: 8080

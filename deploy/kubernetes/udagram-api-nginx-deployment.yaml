@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: udagram-api-nginx
-          image: ioannisioannou16/udagram-api-nginx:3addc24
+          image: ioannisioannou16/udagram-api-nginx:ae06596
           imagePullPolicy: Always
           ports:
             - containerPort: 80
